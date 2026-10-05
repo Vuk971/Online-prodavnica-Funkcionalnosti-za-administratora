@@ -10,7 +10,7 @@ class Article {
 
 function createArticleRows(articles) {
     let table = document.querySelector("#articles-body");
-
+    table.innerHTML=''
     for (let i = 0; i < articles.length; i++) {
         let tr = document.createElement("tr");
 
@@ -25,7 +25,7 @@ function createArticleRows(articles) {
         tr.appendChild(rb);
         tr.appendChild(name);
         tr.appendChild(price);
-        
+
         tr.addEventListener('click', function() {
     displayArticleDetails(articles[i])
 })
@@ -46,6 +46,29 @@ function displayArticleDetails(article) {
     articleDetails.appendChild(p)
 }
 
+function handleFormSubmission(articles) {
+
+    let submitBtn = document.querySelector("#submitBtn")
+
+    submitBtn.addEventListener('click', function() {
+        const form = document.querySelector("#form")
+        const formData = new FormData(form)
+
+        const name = formData.get("name")
+        const price = formData.get("price")
+        const description = formData.get("description")
+
+        for (let i = 0; i < articles.length; i++) {
+    if(name === articles[i].name) {
+        return
+    }
+    }
+        const newArticle = new Article(name, price, description)
+        articles.push(newArticle)
+        createArticleRows(articles)
+    })
+}
+
 function initializeArticles() {
     let articles = [
         new Article("Laptop", 800, "A fast laptop with a large screen."),
@@ -53,7 +76,8 @@ function initializeArticles() {
         new Article("Headphones", 50, "Wireless headphones with long battery life.")
     ];
 
-    createArticleRows(articles);
+    createArticleRows(articles)
+    handleFormSubmission(articles)
 }
 
 document.addEventListener('DOMContentLoaded', initializeArticles);
