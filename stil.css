@@ -1,0 +1,126 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: white;
+}
+
+h1 {
+    font-size: 26px;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #000;
+    margin-bottom: 40px;
+}
+
+.glavni-kontejner {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.leva-strana {
+    width: 280px;
+}
+
+.desna-strana {
+    width: 320px;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+form {
+    outline: 1px solid black;
+    outline-offset: -12px;
+    padding: 30px 25px;
+    background: white;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+form fieldset {
+    border: none; 
+    padding: 0;
+    margin: 0;
+}
+
+form legend {
+    display: none;
+}
+
+.red-forma {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+
+.red-forma label {
+    font-size: 16px;
+    width: 50px;
+}
+
+.red-forma input {
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    flex-grow: 1;
+    font-size: 16px;
+    padding: 0 5px;
+    background: transparent;
+}
+
+form button {
+    display: block;
+    margin-left: auto;
+    margin-top: 15px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 4px 12px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+
+#detalji-proizvoda {
+    outline: 1px solid black;
+    outline-offset: -12px;        
+    padding: 30px 25px;           
+    margin-top: 30px;             
+    background: white;
+    box-sizing: border-box;
+}
+
+.red-detalj {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.red-detalj:last-child {
+    margin-bottom: 0;
+}
+
+.red-detalj .labela {
+    display: inline-block;
+    width: 50px;
+}
