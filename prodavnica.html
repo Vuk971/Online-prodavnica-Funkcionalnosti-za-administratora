@@ -1,61 +1,42 @@
 <!DOCTYPE html>
-<html lang="sr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Artikli</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stil.css">
+    <title>Online prodavnica</title>
 </head>
 <body>
 
-    <h1>Artikli</h1>
-    <hr>
+    <div class="container">
+        <table id="articles">
+            <thead>
+                <tr>
+                    <th>Redni broj</th>
+                    <th>Naziv</th>
+                    <th>Cena</th>
+                </tr>
+            </thead>
+            <tbody id="articles-body">
 
-    <div class="glavni-kontejner">
-        
-        <div class="leva-strana">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Br</th>
-                        <th>Naziv</th>
-                        <th>Cena($)</th>
-                    </tr>
-                </thead>
-                <tbody id="telo-tabele">
-                </tbody>
-            </table>
+            </tbody>
+        </table>
 
-            <div id="detalji-proizvoda">
-                <div class="red-detalj"><span class="labela">Naziv:</span> <span id="detalji-naziv">...</span></div>
-                <div class="red-detalj"><span class="labela">Cena:</span> <span id="detalji-cena">...</span></div>
-                <div class="red-detalj"><span class="labela">Opis:</span> <span id="detalji-opis">...</span></div>
-            </div>
-            
+        <form id="forma">
+            <label for="naziv">Naziv:</label>
+            <input type="text" id="naziv" name="naziv" required>
+
+            <label for="cena">Cena:</label>
+            <input type="number" id="cena" name="cena" required>
+
+            <label for="opis">Opis:</label>
+            <textarea id="opis" name="opis" required></textarea>
+        </form>
+
+        <button type="button" id="submitBtn">Kreiraj artikal</button>
+
+        <div id="articleDetails">
         </div>
-
-        <!-- DESNA STRANA: Forma -->
-        <div class="desna-strana">
-            <form id="forma-artikal">
-                <fieldset>
-                    <legend>Forma</legend>
-                    <div class="red-forma">
-                        <label for="novi-naziv">Naziv:</label>
-                        <input type="text" id="novi-naziv">
-                    </div>
-                    <div class="red-forma">
-                        <label for="nova-cena">Cena:</label>
-                        <input type="number" id="nova-cena">
-                    </div>
-                    <div class="red-forma">
-                        <label for="novi-opis">Opis:</label>
-                        <input type="text" id="novi-opis">
-                    </div>
-                    <button type="button">Dodaj</button>
-                </fieldset>
-            </form>
-            
-        </div>
-
     </div>
 
     <script src="funksionalnosti.js"></script>
